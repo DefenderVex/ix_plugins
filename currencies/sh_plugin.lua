@@ -50,7 +50,7 @@ function ix.currency.Get(amount, currency)
 	if (amount == 1) then
 		return "one "..singular
 	else
-		return ix.util.IntergerToWord(amount).." "..plural
+		return amount.." "..plural
 	end
 end
 
