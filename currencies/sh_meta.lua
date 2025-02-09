@@ -19,6 +19,10 @@ function character:GiveMoney(amount, bNoLog, currency)
 
 	amount = math.abs(amount)
 
+	if (amount < 0) then
+		return false
+	end
+
 	if (!bNoLog) then
 		ix.log.Add(self:GetPlayer(), "money", amount)
 	end
@@ -58,6 +62,10 @@ function character:TakeMoney(amount, bNoLog, currency)
 	end
 
 	amount = math.abs(amount)
+
+	if (amount < 0) then
+		return false
+	end
 
 	if (!bNoLog) then
 		ix.log.Add(self:GetPlayer(), "money", -amount)
