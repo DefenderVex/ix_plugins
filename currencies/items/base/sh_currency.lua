@@ -153,7 +153,7 @@ ITEM.functions.splitCurrency = {
 			if (number) then
 				number = math.Round(number, 0)
 
-				if (item:GetMoney() > number or number < 0) then
+				if (item:GetMoney() > number and number > 0) then
 					local inventory = client:GetCharacter():GetInventory()
 
 					local success, error = inventory:Add("currency_"..item.currency, 1, {money = number})
