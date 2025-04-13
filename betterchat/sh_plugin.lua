@@ -22,9 +22,7 @@ local function Flip(color)
 	return HSVToColor(h, s, v)
 end
 
-timer.Simple(30, function()
-	print("Better Chat Initalized!")
-
+hook.Add("InitializedChatClasses", "ixBetterChatInit", function()
 	ix.chat.Register("ic", {
 		format = "%s says \"%s\"",
 		indicator = "chatTalking",
